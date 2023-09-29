@@ -1,8 +1,8 @@
 // Check if the user is already logged in
 
 document.addEventListener("DOMContentLoaded", function () {
-  const username = localStorage.getItem("username");
-  if (username == "Bella") {
+  const username = localStorage.getItem("name1");
+  if (username) {
     document.getElementById("screen_content").style.display = "none";
     document.getElementById("welcome").style.display = "block";
     document.getElementById("logOut").style.display = "block";
@@ -14,18 +14,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Handle login form submission
 
-document
-  .getElementById("screen_content")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
+function login() {
+  localStorage.setItem("name1", "Bella");
+  localStorage.setItem("pass1", "qwe123");
+  let name1 = localStorage.getItem("name1");
+  let pass1 = localStorage.getItem("pass1");
+  if (document.getElementById("userName").value == name1 && document.getElementById("passWord").value== pass1 ) {
     const username = document.getElementById("userName").value;
     const password = document.getElementById("passWord").value;
 
     // Normally, you would validate the username and password here
     // For simplicity, we'll just set a username in localStorage
 
-    localStorage.setItem("username", username);
     document.getElementById("screen_content").style.display = "none";
     document.getElementById("welcome").style.display = "block";
     document.getElementById("logOut").style.display = "block";
@@ -33,7 +33,16 @@ document
     document.getElementById("image1").style.display = "block";
 
     document.getElementById("welcome").innerHTML = `Welcome, ${username}!`;
-  });
+    event.preventDefault();
+  } else {
+    localStorage.clear();
+
+    document.getElementById("userName").value = "Something is wrong!";
+    document.getElementById("passWord").value = "Something is wrong!";
+    event.preventDefault();
+  }
+}
+
 //Logout btn
 function logout() {
   localStorage.clear();
