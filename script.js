@@ -19,12 +19,14 @@ function login() {
   localStorage.setItem("pass1", "qwe123");
   let name1 = localStorage.getItem("name1");
   let pass1 = localStorage.getItem("pass1");
-  if (document.getElementById("userName").value == name1 && document.getElementById("passWord").value== pass1 ) {
+
+  // Validate the username and password here
+  if (
+    document.getElementById("userName").value == name1 &&
+    document.getElementById("passWord").value == pass1
+  ) {
     const username = document.getElementById("userName").value;
     const password = document.getElementById("passWord").value;
-
-    // Normally, you would validate the username and password here
-    // For simplicity, we'll just set a username in localStorage
 
     document.getElementById("screen_content").style.display = "none";
     document.getElementById("welcome").style.display = "block";
