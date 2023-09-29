@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+   
+    <div class="container" id="container">
+        <img src="navbar.jpg"  class="background1" alt="">
+       
+        <div class="screen">
+
+        
+            <div class="screen__content" >
+                <h1 id="welcome"  style="display:none"></h1>
+                <form class="login" id="screen_content">
+                    
+                    <div class="login__field">
+                       
+                        <input type="text" class="login__input" id="userName" placeholder="UserName / Email">
+                    </div>
+                    <div class="login__field">
+                        
+                      
+                        <input type="password" class="login__input" id="passWord" placeholder="Password">
+                    </div>
+                    <button class="button login__submit" type="submit"  >
+                        <span class="button__text">Log In Now</span>
+                       
+                    </button>
+                </form>
+
+                <button id="logOut" style="display: none;" onclick="logout()"> Log Out Now</button>
+                <div class="social-login">
+                    
+                    <img src="navbar.jpg" id="image1" style="display: none;" alt="">
+                    <h3 id="rules">
+                        Rules:
+                        <br>
+                        <br>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s.
+                    </h3>
+
+                </div>
+                
+            </div>
+            
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
